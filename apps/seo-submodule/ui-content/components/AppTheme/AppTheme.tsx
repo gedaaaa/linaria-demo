@@ -7,8 +7,7 @@ import {
 } from '@jerry-serverless/jerry-ui/lib/themes';
 
 const AppContainer = styled.main`
-  color: ${({ theme }) => theme.color.black};
-  font-family: ${({ theme }) => theme.font.circular};
+  color: black;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
