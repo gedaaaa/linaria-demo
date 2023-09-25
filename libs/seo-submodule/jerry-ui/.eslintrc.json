@@ -1,0 +1,65 @@
+{
+  "extends": ["plugin:@nrwl/nx/react", "../../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*", ".storybook/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "parserOptions": {
+        "project": [
+          "libs/seo-submodule/jerry-ui/tsconfig.*?.json",
+          "libs/seo-submodule/jerry-ui/.storybook/tsconfig.json"
+        ]
+      },
+      "rules": {}
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              {
+                "name": "@jerry-serverless/tools",
+                "message": "Please import specific file to prevent bundle size bloat."
+              },
+              {
+                "name": "@jerry-serverless/enums",
+                "message": "Please import specific file to prevent bundle size bloat."
+              }
+            ],
+            "patterns": [
+              {
+                "group": ["@jerry-serverless/graphql-helpers*"],
+                "message": "Not allowed to import ui-components"
+              },
+              {
+                "group": ["@jerry-serverless/content-api*", "@jerry-serverless/contentful-api*"],
+                "message": "Not allowed to import api in pure ui lib"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "react/jsx-key": "warn"
+      }
+    }
+  ],
+  "rules": {
+    "@typescript-eslint/no-shadow": [
+      "error",
+      {
+        "ignoreFunctionTypeParameterNameValueShadow": true,
+        "allow": ["err", "error", "id", "_"]
+      }
+    ]
+  }
+}

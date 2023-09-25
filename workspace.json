@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "jerry-ui": "libs/seo-submodule/jerry-ui",
+    "ui-content": "apps/seo-submodule/ui-content"
+  }
+}

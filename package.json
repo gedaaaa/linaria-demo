@@ -1,0 +1,57 @@
+{
+  "name": "jerry-serverless",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "ui-content:run": "nx run ui-content:serve"
+  },
+  "private": true,
+  "dependencies": {
+    "@callstack/react-theme-provider": "3.0.9",
+    "@linaria/atomic": "4.5.4",
+    "@next/bundle-analyzer": "12.2.5",
+    "linaria": "4.5.4",
+    "next": "12.2.5",
+    "next-linaria": "1.0.1-beta",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "styled-components": "5.3.5"
+  },
+  "devDependencies": {
+    "@linaria/babel-preset": "^4.2.1",
+    "@linaria/webpack-loader": "^4.1.4",
+    "@nrwl/cli": "14.5.2",
+    "@nrwl/cypress": "14.5.2",
+    "@nrwl/devkit": "14.5.2",
+    "@nrwl/eslint-plugin-nx": "14.5.2",
+    "@nrwl/jest": "14.5.2",
+    "@nrwl/nest": "14.5.2",
+    "@nrwl/next": "14.5.2",
+    "@nrwl/node": "14.5.2",
+    "@nrwl/react": "14.5.2",
+    "@nrwl/storybook": "14.5.2",
+    "@nrwl/web": "14.5.2",
+    "@nrwl/workspace": "14.5.2",
+    "@nx-aws-plugin/nx-aws-cache": "1.1.0",
+    "@typescript-eslint/eslint-plugin": "5.60.1",
+    "@typescript-eslint/parser": "5.60.1",
+    "eslint": "8.22.0",
+    "eslint-config-next": "12.2.5",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-import-resolver-typescript": "3.4.2",
+    "eslint-plugin-lodash": "7.4.0",
+    "eslint-plugin-max-params-no-constructor": "0.0.4",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "7.30.1",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "nock": "13.2.9",
+    "nx": "14.5.2",
+    "nx-linaria": "^1.1.0",
+    "webpack": "5.75.0",
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.1"
+  },
+  "workspaces": [
+    "apps/*"
+  ]
+}

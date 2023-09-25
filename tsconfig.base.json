@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "resolveJsonModule": true,
+    "useUnknownInCatchVariables": false,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types", "@types"],
+    "lib": ["es2017", "dom", "dom.iterable", "es2018", "ESNext.AsyncIterable"],
+    "types": ["node"],
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "@jerry-serverless/jerry-ui": ["libs/seo-submodule/jerry-ui/src/index.ts"],
+      "@jerry-serverless/jerry-ui/*": ["libs/seo-submodule/jerry-ui/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

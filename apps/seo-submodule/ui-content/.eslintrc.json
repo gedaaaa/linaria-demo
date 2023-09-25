@@ -1,0 +1,37 @@
+{
+  "extends": ["plugin:@nrwl/nx/react", "../../../.eslintrc.json", "../../../.eslintrc.bundlesize.json"],
+  "parserOptions": {
+    "project": "apps/seo-submodule/ui-content/tsconfig.*?.json"
+  },
+  "ignorePatterns": ["!**/*"],
+  "rules": {
+    "@typescript-eslint/no-shadow": [
+      "error",
+      {
+        "ignoreFunctionTypeParameterNameValueShadow": true,
+        "allow": ["err", "error"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": "warn",
+        "react/jsx-key": "warn"
+      }
+    },
+    {
+      "files": ["utils/contentful/migrations/*.ts", "utils/contentful/scripts/*.ts"],
+      "rules": {
+        "@typescript-eslint/no-shadow": [
+          "warn",
+          {
+            "ignoreFunctionTypeParameterNameValueShadow": true,
+            "allow": ["err", "error"]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "jerry-ui",
+  "version": "0.0.1",
+  "private": true,
+  "babel": {
+    "presets": [
+      "next/babel",
+      "@babel/preset-env",
+      "@babel/preset-react",
+      "@linaria",
+      [
+        "@nrwl/react/babel",
+        {
+          "runtime": "automatic"
+        }
+      ]
+    ]
+  }
+}

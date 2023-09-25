@@ -1,0 +1,46 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/seo-submodule/ui-content",
+  "projectType": "application",
+  "generators": {},
+  "targets": {
+    "build-app": {
+      "executor": "@nrwl/next:build",
+      "options": {
+        "root": "apps/seo-submodule/ui-content",
+        "outputPath": "dist/apps/seo-submodule/ui-content",
+        "maxWorkers": 16,
+        "memoryLimit": 16384
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "cp apps/seo-submodule/ui-content/.env.stage apps/seo-submodule/ui-content/.env.local >> /dev/null",
+          "PRERENDER=false UPLOAD_TO_SENTRY=false NODE_OPTIONS='--max-old-space-size=16384' nx run ui-content:build-app"
+        ],
+        "parallel": false
+      }
+    },
+    "_serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "ui-content:build-app",
+        "proxyConfig": "apps/seo-submodule/ui-content/proxy.conf.js",
+        "port": 4201,
+        "dev": true
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx run ui-content:_serve"],
+        "envFile": "apps/seo-submodule/ui-content/.env.dev",
+        "parallel": false
+      }
+    }
+  },
+  "tags": []
+}
